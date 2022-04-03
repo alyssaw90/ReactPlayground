@@ -11,7 +11,7 @@ export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
         <ul>
             {todos.map((todo) => (
                 <ToDoListItem 
-                    key={todo.text}
+                    key={todo.name}
                     todo={todo}
                     toggleTodo={toggleTodo}
                 />

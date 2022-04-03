@@ -5,11 +5,13 @@ import { AddToDoForm } from './ToDoList/AddToDoForm';
 
 const initialTodos: Todo[] = [
   {
-    text: 'Walk Eleanor',
+    name: 'Walk Dog',
+    description: 'Take Eleanor on a walk',
     complete: false,
   },
   {
-    text: 'Crochet blanket',
+    name: 'Crochet blanket',
+    description: 'Finish baby blanket',
     complete: true,
   }
 ]
@@ -30,8 +32,8 @@ function App() {
     setTodos(newTodos);
   };
 
-  const addTodo: AddTodo = (text: string) => {
-    const newTodo = {text, complete: false};
+  const addTodo: AddTodo = (name: string, description: string) => {
+    const newTodo = {name, description, complete: false};
     setTodos([...todos, newTodo]);
   }
 

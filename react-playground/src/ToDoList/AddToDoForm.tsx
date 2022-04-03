@@ -5,23 +5,34 @@ interface Props {
 }
 
 export const AddToDoForm: React.FC<Props> = ({addTodo}) => {
-    const [text, setText] = useState('');
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
 
     return (
         <form>
             <input 
-                type="text"
-                value={text}
+                type='text'
+                placeholder='Name'
+                value={name}
                 onChange={(e) => {
-                    setText(e.target.value);
+                    setName(e.target.value);
                 }} 
+            />
+            <input
+                type='text'
+                placeholder='Description'
+                value={description}
+                onChange={(e) => {
+                    setDescription(e.target.value);
+                }}
             />
             <button 
                 type="submit"
                 onClick={(e) => {
                     e.preventDefault();
-                    addTodo(text);
-                    setText('');
+                    addTodo(name, description);
+                    setName('');
+                    setDescription('');
                 }}
             >
                 Add
