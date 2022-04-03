@@ -16,8 +16,7 @@ export const ToDoListItem: React.FC<Props> = ({todo, toggleTodo}) => {
                         toggleTodo(todo);
                     }}
                 /> {' '}
-                {todo.name}
-                {todo.description}
+                {todo.name} - {todo.description}
             </label>
         </li>
     )
